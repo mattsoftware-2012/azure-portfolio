@@ -1,0 +1,237 @@
+.about-page {
+  padding-top: 80px;
+}
+
+.bio-section {
+  padding: 4rem 0;
+}
+
+.bio-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.bio-image {
+  flex: 1;
+  position: relative;
+  max-width: 400px;
+}
+
+.bio-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  filter: grayscale(20%);
+}
+
+.bio-image .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(121, 40, 202, 0.3), rgba(255, 0, 128, 0.3));
+  border-radius: 20px;
+  mix-blend-mode: overlay;
+}
+
+.bio-text {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.bio-text p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.bio-cta {
+  margin-top: 1rem;
+}
+
+.bio-cta .icon {
+  margin-left: 0.5rem;
+}
+
+/* Timeline Section */
+.timeline-section {
+  padding: 4rem 0;
+  background-color: rgba(26, 26, 34, 0.5);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 11px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  z-index: 1;
+}
+
+.timeline-content {
+  background-color: var(--surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-date {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-company {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.timeline-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 4rem 0;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-category {
+  background-color: var(--surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.skill-category h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-tag {
+  background-color: rgba(121, 40, 202, 0.1);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .bio-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bio-image {
+    margin: 0 auto;
+  }
+
+  .bio-text {
+    text-align: left;
+  }
+
+  .bio-cta {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 15px;
+  }
+
+  .timeline-dot {
+    left: 6px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-content {
+    padding: 1rem;
+  }
+}

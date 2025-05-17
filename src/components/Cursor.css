@@ -1,0 +1,46 @@
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: difference;
+}
+
+.cursor-ring.link-hovered {
+  border-color: var(--secondary);
+  background-color: rgba(255, 0, 128, 0.1);
+  mix-blend-mode: normal;
+}
+
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+
+  a,
+  button {
+    cursor: pointer !important;
+  }
+}
